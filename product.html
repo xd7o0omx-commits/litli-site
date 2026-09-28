@@ -5,43 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Litli | المنتج</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..40,450..600,60..100&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Almarai:wght@300;400;700;800&family=Noto+Kufi+Arabic:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#F4EFE7; --white:#FFFFFF; --ink:#191C1B;
     --olive:#385149; --olive-deep:#293C36;
-    --clay:#C97F68; --clay-light:#D9A28E; --brown:#6B4A3A;
-    --line:#E1D9CB; --ease:cubic-bezier(.22,.61,.36,1);
+    --clay:#C97F68; --clay-light:#D9A28E; --clay-dark:#B56F5A; --brown:#6E7269;
+    --line:rgba(25,28,27,.09); --ease:cubic-bezier(.28,.72,.28,1);
     --ok:#3D6B4F;
+    --font-head:'Noto Kufi Arabic','Noto Sans Arabic',sans-serif;
+    --font-body:'Almarai','Noto Sans Arabic',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'IBM Plex Sans Arabic',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;}
-  html[lang="en"] body{font-family:'Poppins',sans-serif;}
-  h1,h2,h3{font-family:'Markazi Text',serif;font-weight:600;color:var(--olive-deep);}
-  html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3{font-family:'Fraunces',serif;font-weight:500;font-optical-sizing:none;font-variation-settings:'opsz' 18,'SOFT' 90;}
+  body{font-family:var(--font-body);background:#FBF8F3;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  html[lang="en"] body{font-family:'Inter',sans-serif;}
+  h1,h2,h3{font-family:var(--font-head);font-weight:600;color:var(--ink);letter-spacing:-.01em;}
+  html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3{font-family:'Inter',sans-serif;font-weight:600;color:var(--ink);letter-spacing:-.02em;}
   a{color:inherit;text-decoration:none;}
   button{font-family:inherit;cursor:pointer;border:none;background:none;}
   svg{display:block;}
   .icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
 
+  /* flat card surface — replaces the old glass/blur look to match the homepage identity */
   .glass{
-    background:linear-gradient(160deg, rgba(255,255,255,.62), rgba(255,255,255,.18));
-    backdrop-filter:blur(18px) saturate(180%); -webkit-backdrop-filter:blur(18px) saturate(180%);
-    border:1px solid rgba(255,255,255,.65);
-    box-shadow:0 10px 24px -10px rgba(25,28,27,.28), inset 0 1px 1px rgba(255,255,255,.9);
-    transition:transform .35s var(--ease);
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow:none;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
   }
-  .glass:hover{transform:translateY(-2px);}
+  .glass:hover{transform:translateY(-2px);box-shadow:0 14px 26px -18px rgba(25,28,27,.25);}
 
-  header{background:rgba(244,239,231,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
-  .nav-wrap{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;gap:20px;}
-  .brand-mark{height:44px;}
-  .nav-actions{display:flex;align-items:center;gap:12px;}
-  .nav-icon-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;}
-  .badge{position:absolute;top:-5px;left:-5px;background:var(--clay);color:#fff;font-size:10px;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;}
-  html[lang="en"] .badge{left:auto;right:-5px;}
-  .lang-switch{font-size:12px;font-weight:600;border-radius:100px;padding:9px 16px;display:flex;gap:4px;}
-  .lang-switch span{opacity:.4;} .lang-switch span.active{opacity:1;color:var(--olive);}
+  header{background:var(--cream);border-bottom:none;box-shadow:0 1px 0 rgba(25,28,27,.09);position:sticky;top:0;z-index:50;}
+  .nav-wrap{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 22px;height:60px;}
+  .brand-mark{height:32px;}
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .nav-icon-btn{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;color:var(--ink);background:transparent;border:none;transition:background .22s;}
+  .nav-icon-btn:hover{background:rgba(25,28,27,.07);}
+  .badge{position:absolute;top:-3px;left:-3px;background:var(--ink);color:#fff;font-size:9.5px;font-weight:700;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center;}
+  html[lang="en"] .badge{left:auto;right:-3px;}
+  .lang-switch{font-size:11.5px;font-weight:500;border-radius:100px;padding:6px 13px;display:flex;gap:4px;background:transparent;border:1px solid rgba(25,28,27,.2);}
+  .lang-switch:hover{background:rgba(25,28,27,.06);}
+  .lang-switch span{opacity:.45;} .lang-switch span.active{opacity:1;color:var(--olive);}
 
   .breadcrumb{max-width:1240px;margin:0 auto;padding:18px 24px 0;font-size:12.5px;color:var(--brown);display:flex;gap:7px;flex-wrap:wrap;}
   .breadcrumb a:hover{color:var(--clay);}
@@ -108,13 +112,12 @@
   .qty button{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--brown);transition:all .2s;}
   .qty button:hover{background:var(--cream);color:var(--clay);}
   .qty span{min-width:18px;text-align:center;font-weight:600;font-size:14px;}
-  .add-bag{flex:1;background:linear-gradient(160deg, rgba(61,90,80,.85), rgba(41,60,54,.7));
-    border:1.5px solid rgba(201,127,104,.9);color:#fff;padding:15px;border-radius:100px;font-size:15px;font-weight:600;
-    backdrop-filter:blur(18px) saturate(180%);
-    box-shadow:0 14px 30px -12px rgba(41,60,54,.5), inset 0 1px 1px rgba(255,255,255,.3);
-    transition:transform .3s var(--ease);}
-  .add-bag:hover{transform:translateY(-2px);}
-  .add-bag.added{background:linear-gradient(160deg,rgba(61,107,79,.9),rgba(45,80,58,.75));}
+  .add-bag{flex:1;background:var(--clay);
+    border:none;color:#fff;padding:15px;border-radius:100px;font-size:15px;font-weight:600;
+    box-shadow:0 10px 26px -10px rgba(201,127,104,.7);
+    transition:background .25s var(--ease), transform .3s var(--ease);}
+  .add-bag:hover{background:var(--clay-dark);transform:translateY(-2px);}
+  .add-bag.added{background:var(--olive);}
   .wish-big{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .wish-big .icon{width:20px;height:20px;stroke:var(--ink);transition:all .25s var(--ease);}
   .wish-big.active .icon{fill:var(--clay);stroke:var(--clay);}
@@ -179,7 +182,7 @@
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
   @media(max-width:900px){.toast{bottom:88px;}}
 
-  footer{background:var(--white);border-top:1px solid var(--line);padding:26px 24px;text-align:center;color:var(--brown);font-size:12.5px;}
+  footer{background:transparent;border-top:1px solid rgba(0,0,0,.07);padding:26px 24px;text-align:center;color:var(--brown);font-size:12.5px;font-weight:300;}
 </style>
 </head>
 <body>
@@ -205,14 +208,14 @@
   <div class="nav-wrap">
     <a href="index.html" aria-label="Litli — home">
       <svg class="brand-mark" viewBox="0 0 1000 405">
-        <path fill="#385149" d="M76 32H126V292C126 328 138 343 166 343C178 343 188 341 198 338L202 365C188 369 175 371 159 371C103 371 76 344 76 296Z"/>
-        <rect x="276" y="140" width="50" height="231" fill="#385149"/>
-        <path d="M31 0C13 3 0 18 0 36C0 55 15 70 34 70C52 70 66 58 70 41L52 0Z" transform="translate(266 32)" fill="#C97F68"/>
-        <path fill="#385149" d="M476 32H526V292C526 328 538 343 566 343C578 343 588 341 598 338L602 365C588 369 575 371 559 371C503 371 476 344 476 296Z"/>
-        <rect x="438" y="170" width="126" height="7" rx="3.5" fill="#385149"/>
-        <path fill="#385149" d="M676 32H726V292C726 328 738 343 766 343C778 343 788 341 798 338L802 365C788 369 775 371 759 371C703 371 676 344 676 296Z"/>
-        <rect x="876" y="170" width="50" height="201" fill="#385149"/>
-        <path d="M31 0C13 3 0 18 0 36C0 55 15 70 34 70C52 70 66 58 70 41L52 0Z" transform="translate(872 91) scale(.82)" fill="#D9A28E"/>
+        <path fill="#191C1B" d="M76 32H126V292C126 328 138 343 166 343C178 343 188 341 198 338L202 365C188 369 175 371 159 371C103 371 76 344 76 296Z"/>
+        <rect x="276" y="140" width="50" height="231" fill="#191C1B"/>
+        <path d="M31 0C13 3 0 18 0 36C0 55 15 70 34 70C52 70 66 58 70 41L52 0Z" transform="translate(266 32)" fill="#B85A3A"/>
+        <path fill="#191C1B" d="M476 32H526V292C526 328 538 343 566 343C578 343 588 341 598 338L602 365C588 369 575 371 559 371C503 371 476 344 476 296Z"/>
+        <rect x="438" y="170" width="126" height="7" rx="3.5" fill="#191C1B"/>
+        <path fill="#191C1B" d="M676 32H726V292C726 328 738 343 766 343C778 343 788 341 798 338L802 365C788 369 775 371 759 371C703 371 676 344 676 296Z"/>
+        <rect x="876" y="170" width="50" height="201" fill="#191C1B"/>
+        <path d="M31 0C13 3 0 18 0 36C0 55 15 70 34 70C52 70 66 58 70 41L52 0Z" transform="translate(872 91) scale(.82)" fill="#C97449"/>
       </svg>
     </a>
     <div class="nav-actions">
